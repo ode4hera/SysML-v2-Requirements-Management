@@ -40,3 +40,8 @@ jobs:
       run: pytest package_checks --durations=0
       env:
         SYSIDE_LICENSE_KEY: ${{ secrets.SYSIDE_LICENSE_KEY }}
+
+    - name: Build kpars
+      run: |
+        cd requirements_management
+        sysand build --update-meta
