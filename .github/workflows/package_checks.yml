@@ -10,6 +10,9 @@ on:
   schedule:
     - cron: "10 5 * * 1"
 
+env:
+  PACKAGE_DIR: requirements_management
+
 jobs:
   package_checks:
     runs-on: ubuntu-latest
@@ -32,9 +35,8 @@ jobs:
 
     - name: Install Sysand dependencies
       run: |
-        cd requirements_management
+        cd ${PACKAGE_DIR}
         sysand sync
-        cd ..
 
     - name: Check packages with pytest
       run: pytest package_checks --durations=0
@@ -43,5 +45,5 @@ jobs:
 
     - name: Build kpars
       run: |
-        cd requirements_management
+        cd ${PACKAGE_DIR}
         sysand build --update-meta

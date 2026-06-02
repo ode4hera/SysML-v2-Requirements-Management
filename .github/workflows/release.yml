@@ -15,6 +15,7 @@ on:
 
 env:
   SYSAND_INDEX_URL: https://sysand.com
+  PACKAGE_DIR: requirements_management
 
 jobs:
   test:
@@ -30,6 +31,7 @@ jobs:
 
       - name: Check version in git tag matches the project's declared version
         run: |
+          cd ${PACKAGE_DIR}
           PROJECT_VERSION="$(sysand info version)"
           TAG_VERSION="${GITHUB_REF_NAME#v}"
           if [ "$PROJECT_VERSION" != "$TAG_VERSION" ]; then
@@ -71,6 +73,6 @@ jobs:
 
       - name: Build and publish the project to the index
         run: |
-          cd requirements_management
+          cd ${PACKAGE_DIR}
           sysand build --update-meta
           sysand publish --index "${SYSAND_INDEX_URL}"

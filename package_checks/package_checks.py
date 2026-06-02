@@ -121,7 +121,7 @@ def _get_package_dependencies(package: str, existing_paths: list):
     package_dependencies = []
     package_path = PACKAGES_PATH / package
     
-    for dependency_file in package_path.glob('.sysand/lib/*/*.sysml'):
+    for dependency_file in package_path.glob('.sysand/lib/**/*.sysml'):
         if dependency_file.name not in existing_filenames:
             package_dependencies.append(dependency_file)
             existing_filenames.add(dependency_file.name)
