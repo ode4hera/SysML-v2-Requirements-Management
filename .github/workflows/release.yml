@@ -76,3 +76,9 @@ jobs:
           cd ${PACKAGE_DIR}
           sysand build --update-meta
           sysand publish --index "${SYSAND_INDEX_URL}"
+      
+      - name: Store kpars
+        uses: actions/upload-artifact@v7
+        with:
+          path: ./**/output/*.kpar
+          archive: false
