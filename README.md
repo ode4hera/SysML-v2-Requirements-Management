@@ -18,6 +18,11 @@ To get started using the library, either clone the repo or install it from the [
 sysand add ode4hera/requirements-management
 ```
 
+When cloning locally, be sure to install any needed dependencies:
+```cmd
+sysand sync
+```
+
 The library is best viewed and used with [Syside Editor](https://docs.sensmetry.com/editor/).
 
 ## Citing
