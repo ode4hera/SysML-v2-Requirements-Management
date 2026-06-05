@@ -47,7 +47,7 @@ If you want to contribute to the library:
 - Create a pull request into the `main` branch
 
 The project is administered by the DLR Institute of System Architectures in Aeronautics.
-You can contact us at *jasper.bussemaker at dlr.de*.
+You can contact us at *digital.engineering at dlr.de*.
 
 ### Repository Structure
 
