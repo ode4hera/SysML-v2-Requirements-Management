@@ -74,7 +74,7 @@ jobs:
       - name: Build and publish the project to the index
         run: |
           cd ${PACKAGE_DIR}
-          sysand build --update-meta
+          sysand build
           sysand publish --index "${SYSAND_INDEX_URL}"
       
       - name: Store kpars

@@ -46,4 +46,4 @@ jobs:
     - name: Build kpars
       run: |
         cd ${PACKAGE_DIR}
-        sysand build --update-meta
+        sysand build
