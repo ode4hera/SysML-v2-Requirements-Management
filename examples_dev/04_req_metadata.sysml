@@ -7,13 +7,13 @@ package RM_ReqMetadataExample {
 
     part theStakeholder : Stakeholder {
         doc /* Stakeholder example */
-        attribute redefines risk = SYSMOD::PriorityKind::high;
+        attribute redefines risk = SYSMOD::LevelKind::high;
         attribute redefines contact = "Person Name, email, tel, department, company";
-        attribute redefines categories = StakeholderCategoryKind::RequirementOwner;
+        attribute redefines categories = StakeholderCategoryKind::requirementOwner;
     }
 
     part projectTeamMember : Stakeholder {
-        attribute :>> categories = StakeholderCategoryKind::Expert;
+        attribute :>> categories = StakeholderCategoryKind::expert;
     }
 
     concern <'N-001'> theStakeholderNeed : Need {

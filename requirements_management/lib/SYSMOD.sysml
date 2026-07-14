@@ -23,7 +23,7 @@
 //
 // Copyright 2025 MBSE4U
 //
-library package SYSMOD {
+library package SYSMOD2 {
     doc 
     /*
      * Definition of SYSMOD Concepts for SysML v2

@@ -45,9 +45,11 @@ library package RequirementsManagement {
 	 */
 
     // Stakeholders
-    public import SYSMOD::Stakeholder;
-    public import SYSMOD::PriorityKind;
+    public import SYSMOD::ExtendedStakeholder;
+    public import SYSMOD::LevelKind;
     public import SYSMOD::StakeholderCategoryKind;
+
+    alias Stakeholder for ExtendedStakeholder;
 
     // Needs and requirements
 
@@ -160,7 +162,7 @@ library package RequirementsManagement {
             Indicating how important it is to the success of the system that the need/requirement is satisfied. */
         }
 
-        part implementationResponsible : Stakeholder[0..1] {
+        part implementationResponsible : ExtendedStakeholder[0..1] {
             doc /* A27 Responsible Person:
             Person (name, position/title, or role) responsible for ensuring
             that the need/requirement is implemented in the design
@@ -201,7 +203,7 @@ library package RequirementsManagement {
             for example testing, demonstration, or analysis. */
         }
 
-        part verificationResponsible : Stakeholder[0..1] {
+        part verificationResponsible : ExtendedStakeholder[0..1] {
             doc /* A9 System Verification or Validation Responsible Organization:
             The organization responsible for performing the verification and validation of the need/requirement. */
         }
@@ -215,7 +217,7 @@ library package RequirementsManagement {
 
     occurrence def ProvenanceAttributes {
         
-        part owner : Stakeholder[0..1] {
+        part owner : ExtendedStakeholder[0..1] {
             doc /* 
             Generic person or organization definition, who maintains the element,
             has the right to say something about it, approves changes to it, and reports the status.
@@ -223,7 +225,7 @@ library package RequirementsManagement {
             */
         }
 
-        part createdBy : Stakeholder[0..1] {
+        part createdBy : ExtendedStakeholder[0..1] {
             doc /*
             The person defining and entering an element into the model.
             */
@@ -332,7 +334,7 @@ library package RequirementsManagement {
         }
     }
 
-    enum def ReqPriority { // redundant with SYSMOD:PriorityKind?
+    enum def ReqPriority {
         doc /* Priority levels for needs/requirements, based on MoSCoW categories. */
         MustHave {
             doc /* The system is perceived as a FAILURE if this need IS NOT satisfied */
