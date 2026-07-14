@@ -79,7 +79,7 @@ usages = [
 [[project]]
 publisher = "ode4hera"
 name = "Requirements Management"
-version = "2.0.0"
+version = "2.0.1"
 exports = [
     "RequirementsManagement",
     "RequirementsManagement_AttributesExample",
