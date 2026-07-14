@@ -27,7 +27,7 @@ jobs:
 
       - name: Install sysand
         run: |
-          curl -fsSL https://client.sysand.com/install.sh | sh -s -- --version latest
+          curl -fsSL https://sysand.com/install.sh | SYSAND_VERSION=latest sh
 
       - name: Check version in git tag matches the project's declared version
         run: |
@@ -51,25 +51,7 @@ jobs:
 
       - name: Install sysand
         run: |
-          curl -fsSL https://client.sysand.com/install.sh | sh -s -- --version latest
-
-      - name: Acquire and configure sysand index credentials
-        run: |
-          GITHUB_OIDC_TOKEN=$(
-            curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-              "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sysand" \
-            | grep -o '"value": *"[^"]*"' \
-            | cut -d'"' -f4 \
-          )
-          SYSAND_INDEX_TOKEN=$(
-            curl -s -X POST "${SYSAND_INDEX_URL}/api/v1/oidc/token" \
-              -H "Content-Type: application/json" \
-              -d "{\"token\": \"${GITHUB_OIDC_TOKEN}\"}" \
-            | grep -o '"token": *"[^"]*"' \
-            | cut -d'"' -f4 \
-          )
-          echo "SYSAND_CRED_X=${SYSAND_INDEX_URL}/api/v1/**" >> "$GITHUB_ENV"
-          echo "SYSAND_CRED_X_BEARER_TOKEN=$SYSAND_INDEX_TOKEN" >> "$GITHUB_ENV"
+          curl -fsSL https://sysand.com/install.sh | SYSAND_VERSION=latest sh
 
       - name: Build and publish the project to the index
         run: |
