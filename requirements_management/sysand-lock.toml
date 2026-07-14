@@ -77,19 +77,19 @@ usages = [
 ]
 
 [[project]]
+publisher = "ode4hera"
 name = "Requirements Management"
-version = "2.0.0"
+version = "2.0.1"
 exports = [
     "RequirementsManagement",
     "RequirementsManagement_AttributesExample",
-    "SYSMOD",
-    "SYSMOD_Process",
 ]
 usages = [
     "https://www.omg.org/spec/KerML/20250201/Data-Type-Library.kpar",
     "https://www.omg.org/spec/KerML/20250201/Function-Library.kpar",
     "https://www.omg.org/spec/KerML/20250201/Semantic-Library.kpar",
     "https://www.omg.org/spec/SysML/20250201/Systems-Library.kpar",
+    "pkg:sysand/mbse4u/sysmod",
 ]
 sources = [
     { editable = "." },
@@ -128,4 +128,18 @@ usages = [
     "https://www.omg.org/spec/KerML/20250201/Data-Type-Library.kpar",
     "https://www.omg.org/spec/KerML/20250201/Function-Library.kpar",
     "https://www.omg.org/spec/KerML/20250201/Semantic-Library.kpar",
+]
+
+[[project]]
+publisher = "mbse4u"
+name = "sysmod"
+version = "5.1.0"
+exports = [
+    "SYSMOD",
+]
+identifiers = [
+    "pkg:sysand/mbse4u/sysmod",
+]
+sources = [
+    { index_kpar = "https://sysand.com/index/mbse4u/sysmod/5.1.0/project.kpar", kpar_size = 17039, kpar_digest = "2245124597e8c182d6e0060c714e9c0c942f8cde8e1ec60e5341fd2dc7c60cf4" },
 ]

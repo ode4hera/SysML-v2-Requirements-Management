@@ -15,7 +15,7 @@ The `examples` folder contains examples of models using the concepts described b
 
 ### Stakeholders
 
-For stakeholder modeling we reuse the concepts defined by [SYSMOD](https://github.com/MBSE4U/sysmod-sysmlv2).
+For stakeholder modeling we reuse the concepts defined by [SYSMOD](https://sysand.com/projects/mbse4u/sysmod/).
 
 ### Needs and Requirements
 
