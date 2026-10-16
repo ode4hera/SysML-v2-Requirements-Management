@@ -26,7 +26,8 @@
       "resource": "https://www.omg.org/spec/SysML/20250201/Systems-Library.kpar"
     },
     {
-      "resource": "pkg:sysand/mbse4u/sysmod"
+      "resource": "pkg:sysand/mbse4u/sysmod",
+      "versionConstraint": "=5.1.3"
     }
   ]
 }
