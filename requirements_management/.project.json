@@ -2,7 +2,7 @@
   "name": "Requirements Management",
   "publisher": "ode4hera",
   "description": "The library provides concepts supporting requirements management, in particular a set of attributes to be modeled according to the INCOSE Needs & Requirements Manual.",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "maintainer": [
     "German Aerospace Center (DLR) <digital.engineering@dlr.de>"
@@ -27,7 +27,7 @@
     },
     {
       "resource": "pkg:sysand/mbse4u/sysmod",
-      "versionConstraint": "=5.1.3"
+      "versionConstraint": "^5.1.4"
     }
   ]
 }

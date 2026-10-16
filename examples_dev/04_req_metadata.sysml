@@ -2,8 +2,10 @@ package RM_ReqMetadataExample {
     doc /*
     Requirement management examples showing stakeholders, needs and requirements with specific metadata.
     */
-    private import SYSMOD::System;
+    private import SYSMOD::system;
     private import RequirementsManagement::*;
+
+    part def System :> system;
 
     part theStakeholder : Stakeholder {
         doc /* Stakeholder example */

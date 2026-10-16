@@ -4,8 +4,10 @@ package RequirementsManagement_AttributesExample {
     
     Copyright: (c) 2026, The Contributors to the ODE4HERA SysML v2 Libraries.
     */
-    private import SYSMOD::System;
+    private import SYSMOD::system;
     private import RequirementsManagement::*;
+
+    part def System :> system;
 
     part theStakeholder : ExtendedStakeholder {
         doc /* Stakeholder example */
@@ -27,7 +29,7 @@ package RequirementsManagement_AttributesExample {
 
         // Traceability attributes
         
-        subject system : System;
+        subject genericSystem : System;
         stakeholder references theStakeholder;
 
         attribute redefines rationale = "Rationale for existence of the need";
