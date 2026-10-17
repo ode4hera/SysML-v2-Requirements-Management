@@ -7,7 +7,7 @@ package RequirementsManagement_AttributesExample {
     private import SYSMOD::system;
     private import RequirementsManagement::*;
 
-    part def System :> system;
+    alias System for system;
 
     part theStakeholder : ExtendedStakeholder {
         doc /* Stakeholder example */
