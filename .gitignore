@@ -214,3 +214,4 @@ fabric.properties
 !*.kpar/
 sysand_env
 .sysand
+sysand-lock.toml
