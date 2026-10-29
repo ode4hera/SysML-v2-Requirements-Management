@@ -53,15 +53,15 @@ library package RequirementsManagement {
 
     // Needs and requirements
 
-    concern def Need specializes NeedsRequirementsAttributes {
+    abstract concern def Need specializes NeedsRequirementsAttributes {
         doc /* Stakeholder need: something the stakeholder needs from the system, not expressed as a formal requirement. */
     }
 
-    requirement def Requirement specializes NeedsRequirementsAttributes {
+    abstract requirement def Requirement specializes NeedsRequirementsAttributes {
         doc /* Requirement: a formalization of one or more needs that can be objectively verified. */
     }
 
-    requirement def NeedsRequirementsAttributes :> ProvenanceAttributes {
+    abstract requirement def NeedsRequirementsAttributes :> ProvenanceAttributes {
         doc /* Requirement and need attributes.
         Source: INCOSE Needs and Requirements Manual (NRM; 2024), Chapter 15.
         
@@ -215,7 +215,7 @@ library package RequirementsManagement {
 
     }
 
-    occurrence def ProvenanceAttributes {
+    abstract occurrence def ProvenanceAttributes {
         
         part owner : ExtendedStakeholder[0..1] {
             doc /* 
