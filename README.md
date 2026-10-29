@@ -4,6 +4,7 @@
 
 [![Package Checks](https://github.com/ode4hera/SysML-v2-Requirements-Management/workflows/Package%20Checks/badge.svg)](https://github.com/ode4hera/SysML-v2-Requirements-Management/actions/workflows/package_checks.yml)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Sysand](https://img.shields.io/badge/sysand-Requirements%20Management-blue)](https://sysand.com/projects/ode4hera/requirements-management/)
 
 This repository contains a SysML v2 library package for requirements management, which adds a database of INCOSE-recommended attributes to requirements and needs.
 Refer to the package [readme](requirements_management/readme.md) and [examples](requirements_management/examples/) for more details.
