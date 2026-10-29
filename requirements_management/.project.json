@@ -27,7 +27,7 @@
     },
     {
       "resource": "pkg:sysand/mbse4u/sysmod",
-      "versionConstraint": "^5.1.4"
+      "versionConstraint": "=5.1.3"
     }
   ]
 }
