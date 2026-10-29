@@ -7,7 +7,7 @@
 //
 // This library has been developed as part of the ODE4HERA project: https://www.ode4hera.eu/
 //
-// Version: v2.0.1
+// Version: v2.0.2
 // License: MIT
 // Maintainer: DLR Institute of System Architectures in Aeronautics
 // Contact: digital.engineering@dlr.de

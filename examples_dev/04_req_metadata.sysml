@@ -2,12 +2,12 @@ package RM_ReqMetadataExample {
     doc /*
     Requirement management examples showing stakeholders, needs and requirements with specific metadata.
     */
-    private import SYSMOD::System;
+    private import SYSMOD::LevelKind;
     private import RequirementsManagement::*;
 
     part theStakeholder : Stakeholder {
         doc /* Stakeholder example */
-        attribute redefines risk = SYSMOD::LevelKind::high;
+        attribute redefines risk = LevelKind::high;
         attribute redefines contact = "Person Name, email, tel, department, company";
         attribute redefines categories = StakeholderCategoryKind::requirementOwner;
     }
@@ -21,7 +21,7 @@ package RM_ReqMetadataExample {
 
         // Traceability attributes
         
-        subject system : System;
+        subject system;
         stakeholder references theStakeholder;
 
         attribute redefines rationale = "Rationale for existence of the need";
