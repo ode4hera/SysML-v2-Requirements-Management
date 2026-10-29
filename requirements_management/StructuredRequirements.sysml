@@ -62,19 +62,20 @@ library package StructuredRequirements {
 
         calc def GetStatement {
             doc /* Load the defined statement of an element with a statement. */
-            in element : ElementWithStatement;
+            in element : KerML::Element;
 
             // Get all element documentations (`doc`)
-            ref allDocs : KerML::Documentation [*] = (element meta SysML::Type).documentation;
+            ref allDocs : KerML::Documentation [*] = element.documentation;
 
             // Select the first documentation with the name "statement"
-            ref statementDoc : KerML::Documentation [0..1] = allDocs->selectOne({ in docEl: KerML::Documentation; docEl.name == "statement" });
+            ref statementDoc : KerML::Documentation [0..1] = 
+                allDocs->selectOne({ in docEl: KerML::Documentation; docEl.name == "statement" });
 
             // Use the statement doc if there was one, otherwise use the first doc of the element
             ref selectedDoc = statementDoc ?? allDocs->head();
             
             // If a doc was found, return its body as the statement, otherwise return the name of the element
-            return statement : ScalarValues::String = if selectedDoc != null ? selectedDoc.body else (element meta SysML::Type).name;
+            return statement : ScalarValues::String = if selectedDoc != null ? selectedDoc.body else element.name;
         }
     }
 

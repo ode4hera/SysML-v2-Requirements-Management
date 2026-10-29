@@ -13,7 +13,7 @@ package StatementTests {
 
     part def ElementWithoutDocs :> ElementWithStatement;
 
-    attribute statement1 = GetStatement(new ElementWithStatementDoc());
-    attribute statement2 = GetStatement(new ElementWithDocs());
-    attribute statement3 = GetStatement(new ElementWithoutDocs());
+    attribute statement1 = GetStatement(ElementWithStatementDoc meta KerML::Element);
+    attribute statement2 = GetStatement(ElementWithDocs meta KerML::Element);
+    attribute statement3 = GetStatement(ElementWithoutDocs meta KerML::Element);
 }
