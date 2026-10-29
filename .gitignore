@@ -215,3 +215,5 @@ fabric.properties
 sysand_env
 .sysand
 */sysand-lock.toml
+pyproject.toml
+uv.lock
