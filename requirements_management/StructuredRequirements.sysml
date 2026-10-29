@@ -60,6 +60,17 @@ library package StructuredRequirements {
             assert constraint { not (element meta SysML::Type).isAbstract }
         }
 
+        calc def FindFeature {
+            in element : KerML::Type;
+            in name : ScalarValues::String;
+            element.feature->select { in f : KerML::Feature; (f.name == name) or (f.shortName == name) }
+        }
+
+        calc def GetFeatureValue {
+            in feature : KerML::Feature;
+            feature.ownedMembership->select { in om : KerML::OwningMembership ; om istype KerML::FeatureValue }.value
+        }
+
         calc def GetStatement {
             doc /* Load the defined statement of an element with a statement. */
             in element : KerML::Element;

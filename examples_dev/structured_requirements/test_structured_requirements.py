@@ -1,4 +1,4 @@
-# uv run -m pytest -v examples_dev/structured_requirements
+# uv run -m pytest -s -v examples_dev/structured_requirements
 
 import syside
 from syside import query, testing
@@ -46,3 +46,25 @@ def test_statements():
     assert attr_values['statement1'] == 'Statement doc'
     assert attr_values['statement2'] == 'Main doc 1'
     assert attr_values['statement3'] == 'ElementWithoutDocs'
+
+
+def test_resolving():
+    model = _load_model(TEST_MODELS_PATH / '02_resolving.sysml')
+
+    features = {}
+    compiler = syside.Compiler()
+    for ref_usage in query.find_elements_of_type(model, syside.ReferenceUsage):
+        value, report = compiler.evaluate_feature(ref_usage, ref_usage, model.lib)
+        if report.fatal:
+            raise RuntimeError(report.diagnostics)
+        else:
+            if isinstance(value, syside.BoundMetaclass):
+                features[ref_usage.name] = (str(value.element.qualified_name), getattr(value.element, 'value', None), value.metaclass.name)
+            else:
+                features[ref_usage.name] = value
+    
+    assert features['attrFeature'] == ('ResolvingTests::myPart::attr', None, 'AttributeUsage')
+    assert features['subPartFeature'] == ('ResolvingTests::BasePart::subPart', None, 'PartUsage')
+    assert features['attrValue'] == ('None', 'a string ', 'LiteralString')
+    assert features['statementValue'] == 'and a statement'
+    assert features['concatValue'] == 'concat a string and a statement'
